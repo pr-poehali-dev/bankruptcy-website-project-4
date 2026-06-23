@@ -335,7 +335,7 @@ const Index = () => {
               <p className="uppercase tracking-widest text-gold text-xs mb-4">Контакты</p>
               <a href="tel:+79125908964" className="block text-white/80 hover:text-gold mb-2">+7 912 590-89-64</a>
               <a href="mailto:maria.mitroff@yandex.ru" className="block text-white/80 hover:text-gold">maria.mitroff@yandex.ru</a>
-              <p className="text-white/50 text-sm mt-2">На телефоне все мессенджеры</p>
+              <p className="text-white/50 text-sm mt-2"></p>
             </div>
             <div>
               <p className="uppercase tracking-widest text-gold text-xs mb-4">Разделы</p>
