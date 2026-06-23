@@ -7,7 +7,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const LEAD_URL = 'https://functions.poehali.dev/0a9c7dee-237b-4a40-88c2-ac3449af0ac4';
-const PORTRAIT = 'https://cdn.poehali.dev/projects/3dd36d97-b480-4702-892f-9d66ac6d871e/files/bc0a401c-afb9-42a2-b4d8-46d8679e7757.jpg';
+const PORTRAIT = 'https://cdn.poehali.dev/projects/3dd36d97-b480-4702-892f-9d66ac6d871e/bucket/cc528185-5537-4474-b15e-c33b3816e8c0.jpg';
 
 const NAV = [
   { id: 'about', label: 'Обо мне' },
