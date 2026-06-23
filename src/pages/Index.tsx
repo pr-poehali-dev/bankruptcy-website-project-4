@@ -29,35 +29,37 @@ const FAQ = [
 ];
 
 const SERVICES = [
-  { icon: 'FileX2', title: 'Списание долгов', text: 'Полное освобождение от долгов перед банками, МФО и коллекторами через процедуру банкротства.' },
-  { icon: 'Home', title: 'Сохранение ипотеки', text: 'Помогаю сохранить ипотечное жильё даже в процессе банкротства — индивидуальная стратегия.' },
-  { icon: 'FileSignature', title: 'Сбор документов', text: 'Быстрая подготовка и подача заявлений. Берём бумажную работу на себя — вам не нужно ходить по инстанциям.' },
-  { icon: 'ShieldCheck', title: 'Защита от коллекторов', text: 'С момента подачи заявления прекращаются звонки, начисление пеней и взыскания.' },
-  { icon: 'Scale', title: 'Сопровождение в суде', text: 'Полное юридическое сопровождение на всех этапах процедуры до получения определения суда.' },
-  { icon: 'MessagesSquare', title: 'Бесплатная консультация', text: 'Разбираю вашу ситуацию, оцениваю перспективы и рассчитываю стоимость индивидуально.' },
+  { icon: 'FileX2', emoji: '🗂️', title: 'Списание долгов', text: 'Полное освобождение от долгов перед банками, МФО и коллекторами через процедуру банкротства.', color: 'bg-orange-50 text-orange-500' },
+  { icon: 'Home', emoji: '🏠', title: 'Сохранение ипотеки', text: 'Помогаю сохранить ипотечное жильё даже в процессе банкротства — индивидуальная стратегия.', color: 'bg-blue-50 text-blue-500' },
+  { icon: 'FileSignature', emoji: '📋', title: 'Сбор документов', text: 'Быстрая подготовка и подача заявлений. Берём бумажную работу на себя.', color: 'bg-purple-50 text-purple-500' },
+  { icon: 'ShieldCheck', emoji: '🛡️', title: 'Защита от коллекторов', text: 'С момента подачи заявления прекращаются звонки, начисление пеней и взыскания.', color: 'bg-green-50 text-green-500' },
+  { icon: 'Scale', emoji: '⚖️', title: 'Сопровождение в суде', text: 'Полное юридическое сопровождение на всех этапах процедуры до определения суда.', color: 'bg-red-50 text-red-500' },
+  { icon: 'MessagesSquare', emoji: '💬', title: 'Бесплатная консультация', text: 'Разбираю вашу ситуацию, оцениваю перспективы и рассчитываю стоимость индивидуально.', color: 'bg-yellow-50 text-yellow-600' },
 ];
 
 const CASES = [
-  { sum: '2 400 000 ₽', desc: 'Списан долг по потребительским кредитам в трёх банках. Срок — 7 месяцев.', tag: 'Кредиты' },
-  { sum: '1 150 000 ₽', desc: 'Долги по микрозаймам и кредитным картам. Ипотека сохранена.', tag: 'Ипотека' },
-  { sum: '3 800 000 ₽', desc: 'Банкротство ИП с сохранением единственного жилья семьи.', tag: 'Бизнес' },
-  { sum: '890 000 ₽', desc: 'Освобождение от долгов после поручительства по чужому кредиту.', tag: 'Поручительство' },
+  { sum: '2 400 000 ₽', desc: 'Списан долг по потребительским кредитам в трёх банках. Срок — 7 месяцев.', tag: 'Кредиты', emoji: '🏦' },
+  { sum: '1 150 000 ₽', desc: 'Долги по микрозаймам и кредитным картам. Ипотека сохранена.', tag: 'Ипотека', emoji: '🏠' },
+  { sum: '3 800 000 ₽', desc: 'Банкротство ИП с сохранением единственного жилья семьи.', tag: 'Бизнес', emoji: '💼' },
+  { sum: '890 000 ₽', desc: 'Освобождение от долгов после поручительства по чужому кредиту.', tag: 'Поручительство', emoji: '🤝' },
 ];
 
 const GUARANTEES = [
-  { icon: 'BadgeCheck', title: 'Гарантия результата', text: 'Письменная гарантия на выполнение работ. Если не возьмусь — честно скажу об этом сразу.' },
-  { icon: 'Clock', title: 'Сжатые сроки', text: 'Быстрая подача заявлений и сбор документов сокращают срок процедуры.' },
-  { icon: 'Wallet', title: 'Честная цена', text: 'Стоимость рассчитывается индивидуально на бесплатной консультации. Без скрытых платежей.' },
-  { icon: 'Award', title: '8 лет опыта', text: 'Сотни доведённых до конца дел и кейсов разной сложности.' },
+  { icon: 'BadgeCheck', emoji: '✅', title: 'Гарантия результата', text: 'Письменная гарантия на выполнение работ. Если не возьмусь — честно скажу об этом сразу.' },
+  { icon: 'Clock', emoji: '⚡', title: 'Сжатые сроки', text: 'Быстрая подача заявлений и сбор документов сокращают срок процедуры.' },
+  { icon: 'Wallet', emoji: '💰', title: 'Честная цена', text: 'Стоимость рассчитывается индивидуально. Без скрытых платежей — вы знаете сумму заранее.' },
+  { icon: 'Award', emoji: '🏆', title: '8 лет опыта', text: 'Сотни доведённых до конца дел и кейсов разной сложности.' },
 ];
 
 const Index = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: '', phone: '', message: '' });
   const [loading, setLoading] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMenuOpen(false);
   };
 
   const submit = async (e: React.FormEvent) => {
@@ -84,102 +86,128 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-white text-foreground">
+
       {/* HEADER */}
-      <header className="fixed top-0 inset-x-0 z-50 bg-navy-deep/95 backdrop-blur border-b border-white/10">
+      <header className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div className="container mx-auto flex items-center justify-between h-16 px-6">
           <button onClick={() => scrollTo('hero')} className="flex flex-col leading-none text-left">
-            <span className="font-display text-xl text-white tracking-wide">Митрофанова М.А.</span>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-gold">Банкротство физлиц</span>
+            <span className="font-display text-xl text-foreground font-semibold tracking-wide">Митрофанова М.А.</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-brand">Банкротство физлиц</span>
           </button>
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7">
             {NAV.map((n) => (
-              <button key={n.id} onClick={() => scrollTo(n.id)} className="text-sm text-white/70 hover:text-gold transition-colors">
+              <button key={n.id} onClick={() => scrollTo(n.id)} className="text-sm text-gray-500 hover:text-brand transition-colors font-medium">
                 {n.label}
               </button>
             ))}
           </nav>
-          <Button onClick={() => scrollTo('consult')} className="bg-gold text-navy hover:bg-gold/90 rounded-none font-medium">
-            Консультация
-          </Button>
+          <div className="flex items-center gap-3">
+            <a href="tel:+79125908964" className="hidden md:block text-sm font-semibold text-foreground hover:text-brand transition-colors">
+              +7 912 590-89-64
+            </a>
+            <Button onClick={() => scrollTo('consult')} className="bg-brand text-white hover:bg-brand-dark rounded-xl font-semibold shadow-sm" style={{ backgroundColor: 'hsl(var(--brand))' }}>
+              Консультация
+            </Button>
+            <button className="md:hidden p-2" onClick={() => setMenuOpen(!menuOpen)}>
+              <Icon name={menuOpen ? 'X' : 'Menu'} size={22} />
+            </button>
+          </div>
         </div>
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+            {NAV.map((n) => (
+              <button key={n.id} onClick={() => scrollTo(n.id)} className="text-left text-base text-gray-700 hover:text-brand font-medium py-1">
+                {n.label}
+              </button>
+            ))}
+          </div>
+        )}
       </header>
 
       {/* HERO */}
-      <section id="hero" className="relative bg-navy-deep text-white pt-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(hsl(var(--gold)) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center py-20 lg:py-28 relative">
-          <div className="animate-fade-up">
-            <div className="gold-line mb-8" />
-            <p className="uppercase tracking-[0.3em] text-gold text-xs mb-6">Юридическая помощь · Опыт 8 лет</p>
-            <h1 className="font-display text-5xl lg:text-7xl leading-[1.05] mb-6">
-              Законно избавлю<br />вас от долгов
+      <section id="hero" className="pt-16 bg-gradient-to-br from-orange-50 via-white to-white overflow-hidden">
+        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center py-16 lg:py-24">
+          <div className="animate-fade-up order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 bg-orange-100 text-brand rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
+              <span className="w-2 h-2 rounded-full bg-brand animate-pulse" style={{ backgroundColor: 'hsl(var(--brand))' }} />
+              Опыт 8 лет · Бесплатная консультация
+            </div>
+            <h1 className="font-display text-5xl lg:text-6xl leading-[1.08] mb-5 text-foreground">
+              Законно избавлю<br />
+              <span style={{ color: 'hsl(var(--brand))' }}>вас от долгов</span>
             </h1>
-            <p className="text-white/70 text-lg max-w-md mb-10">
-              Помогаю людям в сложной финансовой ситуации списать долги и сохранить ипотеку. Бесплатная консультация и гарантия результата.
+            <p className="text-gray-500 text-lg max-w-lg mb-8 leading-relaxed">
+              Помогаю людям в сложной финансовой ситуации списать долги и сохранить ипотеку. Гарантия результата в письменном виде.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button onClick={() => scrollTo('consult')} size="lg" className="bg-gold text-navy hover:bg-gold/90 rounded-none text-base px-8">
+            <div className="flex flex-wrap gap-3 mb-10">
+              <Button onClick={() => scrollTo('consult')} size="lg" className="text-white rounded-xl px-8 text-base font-semibold shadow-md hover:shadow-lg transition-shadow" style={{ backgroundColor: 'hsl(var(--brand))' }}>
                 Бесплатная консультация
               </Button>
-              <Button onClick={() => scrollTo('services')} size="lg" variant="outline" className="rounded-none border-white/30 text-white hover:bg-white/10 bg-transparent text-base px-8">
+              <Button onClick={() => scrollTo('services')} size="lg" variant="outline" className="rounded-xl border-gray-200 text-gray-700 hover:border-brand hover:text-brand text-base px-8">
                 Узнать об услугах
               </Button>
             </div>
-            <div className="flex gap-10 mt-14">
+            <div className="flex gap-8">
               {[['8 лет', 'опыта'], ['100%', 'конфиденциально'], ['0 ₽', 'консультация']].map(([a, b]) => (
-                <div key={b}>
-                  <div className="font-display text-3xl text-gold">{a}</div>
-                  <div className="text-xs uppercase tracking-wider text-white/50">{b}</div>
+                <div key={b} className="text-center">
+                  <div className="font-display text-3xl font-bold" style={{ color: 'hsl(var(--brand))' }}>{a}</div>
+                  <div className="text-xs text-gray-400 mt-0.5 uppercase tracking-wide">{b}</div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            <div className="absolute -inset-4 border border-gold/30" />
-            <img src={PORTRAIT} alt="Митрофанова Мария Александровна" className="relative w-full h-[520px] object-cover object-top grayscale-[15%]" />
-            <div className="absolute -bottom-6 -left-6 bg-gold text-navy p-5 max-w-[220px]">
-              <div className="font-display text-xl leading-tight">Митрофанова Мария Александровна</div>
-              <div className="text-xs mt-1 opacity-80">Специалист по банкротству</div>
+          <div className="relative order-1 lg:order-2 animate-fade-up" style={{ animationDelay: '0.15s' }}>
+            <div className="absolute inset-0 rounded-3xl" style={{ background: 'linear-gradient(135deg, hsl(11 90% 55% / 0.12), transparent 60%)' }} />
+            <img
+              src={PORTRAIT}
+              alt="Митрофанова Мария Александровна"
+              className="relative w-full h-[480px] lg:h-[560px] object-cover object-top rounded-3xl shadow-2xl"
+            />
+            <div className="absolute bottom-5 left-5 right-5 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0" style={{ backgroundColor: 'hsl(11 90% 97%)' }}>⚖️</div>
+              <div>
+                <div className="font-semibold text-foreground text-sm">Митрофанова Мария Александровна</div>
+                <div className="text-xs text-gray-400">Специалист по банкротству физических лиц</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-24 container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <section id="about" className="py-20 bg-white">
+        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="uppercase tracking-[0.3em] text-gold text-xs mb-4">Обо мне</p>
-            <h2 className="font-display text-4xl lg:text-5xl text-navy mb-6 leading-tight">
+            <div className="inline-block bg-orange-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Обо мне</div>
+            <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
               Меня зовут Мария.<br />Я на вашей стороне
             </h2>
             <div className="gold-line mb-8" />
           </div>
-          <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
+          <div className="space-y-5 text-gray-500 text-lg leading-relaxed">
             <p>Более 8 лет я помогаю физическим лицам выходить из сложных финансовых ситуаций через процедуру банкротства. За это время накопила большой опыт и провела множество дел разной сложности.</p>
-            <p>Я понимаю, как тяжело жить под давлением долгов и звонков коллекторов. Моя задача — снять с вас этот груз законным путём, защитить ваше имущество и по возможности сохранить ипотечное жильё.</p>
+            <p>Я понимаю, как тяжело жить под давлением долгов и звонков коллекторов. Моя задача — снять с вас этот груз законным путём, защитить имущество и по возможности сохранить ипотечное жильё.</p>
             <p>Каждое дело веду лично, от первой консультации до определения суда. Работаю честно и прозрачно — вы всегда знаете, на каком этапе находится ваша процедура.</p>
           </div>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-24 bg-secondary">
+      <section id="services" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="uppercase tracking-[0.3em] text-gold text-xs mb-4">Услуги</p>
-            <h2 className="font-display text-4xl lg:text-5xl text-navy mb-4">Как я могу помочь</h2>
-            <div className="gold-line mx-auto" />
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="inline-block bg-orange-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Услуги</div>
+            <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-2">Как я могу помочь</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {SERVICES.map((s) => (
-              <div key={s.title} className="bg-card p-9 hover-lift">
-                <div className="w-12 h-12 flex items-center justify-center bg-navy text-gold mb-6">
-                  <Icon name={s.icon} size={24} />
+              <div key={s.title} className="bg-white rounded-2xl p-7 shadow-sm hover-lift border border-gray-100">
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-5 ${s.color}`}>
+                  {s.emoji}
                 </div>
-                <h3 className="font-display text-2xl text-navy mb-3">{s.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{s.text}</p>
+                <h3 className="font-semibold text-lg text-foreground mb-2">{s.title}</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">{s.text}</p>
               </div>
             ))}
           </div>
@@ -187,47 +215,42 @@ const Index = () => {
       </section>
 
       {/* CASES */}
-      <section id="cases" className="py-24 container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="uppercase tracking-[0.3em] text-gold text-xs mb-4">Кейсы</p>
-          <h2 className="font-display text-4xl lg:text-5xl text-navy mb-4">Реальные результаты</h2>
-          <div className="gold-line mx-auto" />
-        </div>
-        <div className="grid md:grid-cols-2 gap-px bg-border">
-          {CASES.map((c) => (
-            <div key={c.sum} className="bg-card p-9 hover-lift flex gap-6">
-              <div className="shrink-0">
-                <div className="w-14 h-14 flex items-center justify-center border border-gold text-gold">
-                  <Icon name="TrendingDown" size={26} />
+      <section id="cases" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="inline-block bg-orange-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Кейсы</div>
+            <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-2">Реальные результаты</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-5">
+            {CASES.map((c) => (
+              <div key={c.sum} className="bg-gray-50 rounded-2xl p-7 hover-lift border border-gray-100 flex gap-5 items-start">
+                <div className="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-2xl shrink-0">
+                  {c.emoji}
+                </div>
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-brand bg-orange-50 px-2 py-0.5 rounded-full">{c.tag}</span>
+                  <div className="font-display text-2xl font-bold text-foreground mt-2 mb-1">Списано {c.sum}</div>
+                  <p className="text-gray-400 text-sm leading-relaxed">{c.desc}</p>
                 </div>
               </div>
-              <div>
-                <span className="text-[10px] uppercase tracking-widest text-gold">{c.tag}</span>
-                <div className="font-display text-3xl text-navy my-1">Списано {c.sum}</div>
-                <p className="text-muted-foreground">{c.desc}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* GUARANTEES */}
-      <section id="guarantees" className="py-24 bg-navy-deep text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(hsl(var(--gold)) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-        <div className="container mx-auto px-6 relative">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="uppercase tracking-[0.3em] text-gold text-xs mb-4">Гарантии</p>
-            <h2 className="font-display text-4xl lg:text-5xl mb-4">Почему мне доверяют</h2>
-            <div className="gold-line mx-auto" />
+      <section id="guarantees" className="py-20" style={{ backgroundColor: 'hsl(var(--dark))' }}>
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="inline-block bg-white/10 text-white text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Гарантии</div>
+            <h2 className="font-display text-4xl lg:text-5xl text-white mb-2">Почему мне доверяют</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {GUARANTEES.map((g) => (
-              <div key={g.title} className="text-center">
-                <div className="w-16 h-16 mx-auto flex items-center justify-center border border-gold/40 text-gold mb-6">
-                  <Icon name={g.icon} size={30} />
-                </div>
-                <h3 className="font-display text-2xl mb-3">{g.title}</h3>
-                <p className="text-white/60 leading-relaxed text-sm">{g.text}</p>
+              <div key={g.title} className="bg-white/5 border border-white/10 rounded-2xl p-7 text-center hover-lift">
+                <div className="text-4xl mb-5">{g.emoji}</div>
+                <h3 className="font-semibold text-white text-lg mb-2">{g.title}</h3>
+                <p className="text-white/50 leading-relaxed text-sm">{g.text}</p>
               </div>
             ))}
           </div>
@@ -235,141 +258,140 @@ const Index = () => {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 container mx-auto px-6">
-        <div className="grid lg:grid-cols-3 gap-16 items-start">
-          <div className="lg:sticky lg:top-24">
-            <p className="uppercase tracking-[0.3em] text-gold text-xs mb-4">Вопросы и ответы</p>
-            <h2 className="font-display text-4xl lg:text-5xl text-navy mb-6 leading-tight">
-              Частые<br />вопросы
-            </h2>
-            <div className="gold-line mb-8" />
-            <p className="text-muted-foreground">
-              Не нашли ответ на свой вопрос? Задайте его лично на бесплатной консультации.
-            </p>
-            <Button onClick={() => scrollTo('consult')} className="mt-6 bg-navy text-white hover:bg-navy/90 rounded-none">
-              Задать вопрос
-            </Button>
-          </div>
-          <div className="lg:col-span-2">
-            <Accordion type="single" collapsible className="w-full">
-              {FAQ.map((item, i) => (
-                <AccordionItem key={i} value={`item-${i}`} className="border-border">
-                  <AccordionTrigger className="font-display text-xl text-navy text-left hover:no-underline hover:text-gold py-6">
-                    {item.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
-                    {item.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+      <section id="faq" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-3 gap-16 items-start">
+            <div className="lg:sticky lg:top-24">
+              <div className="inline-block bg-orange-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">FAQ</div>
+              <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-4 leading-tight">Частые вопросы</h2>
+              <div className="gold-line mb-6" />
+              <p className="text-gray-400 mb-6">Не нашли ответ на свой вопрос? Задайте его на бесплатной консультации.</p>
+              <Button onClick={() => scrollTo('consult')} className="rounded-xl font-semibold text-white" style={{ backgroundColor: 'hsl(var(--brand))' }}>
+                Задать вопрос
+              </Button>
+            </div>
+            <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+              <Accordion type="single" collapsible className="w-full">
+                {FAQ.map((item, i) => (
+                  <AccordionItem key={i} value={`item-${i}`} className="border-gray-100 px-6">
+                    <AccordionTrigger className="font-semibold text-base text-foreground text-left hover:no-underline hover:text-brand py-5">
+                      {item.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-500 text-sm leading-relaxed pb-5">
+                      {item.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CONSULT FORM */}
-      <section id="consult" className="py-24 bg-secondary"><div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="uppercase tracking-[0.3em] text-gold text-xs mb-4">Консультация</p>
-            <h2 className="font-display text-4xl lg:text-5xl text-navy mb-6 leading-tight">
-              Оставьте заявку —<br />разберём вашу ситуацию
-            </h2>
-            <div className="gold-line mb-8" />
-            <p className="text-muted-foreground text-lg mb-8">
-              Консультация бесплатная. Я оценю перспективы вашего дела, отвечу на вопросы и рассчитаю стоимость процедуры индивидуально.
-            </p>
-            <div className="space-y-4">
-              <a href="tel:+79125908964" className="flex items-center gap-4 group">
-                <div className="w-11 h-11 flex items-center justify-center bg-navy text-gold shrink-0 group-hover:bg-gold group-hover:text-navy transition-colors">
-                  <Icon name="Phone" size={20} />
-                </div>
-                <span className="text-navy font-medium group-hover:text-gold transition-colors">+7 912 590-89-64</span>
-              </a>
-              <a href="mailto:maria.mitroff@yandex.ru" className="flex items-center gap-4 group">
-                <div className="w-11 h-11 flex items-center justify-center bg-navy text-gold shrink-0 group-hover:bg-gold group-hover:text-navy transition-colors">
-                  <Icon name="Mail" size={20} />
-                </div>
-                <span className="text-navy font-medium group-hover:text-gold transition-colors">maria.mitroff@yandex.ru</span>
-              </a>
-              <a href="https://t.me/+79125908964" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-                <div className="w-11 h-11 flex items-center justify-center bg-navy text-gold shrink-0 group-hover:bg-gold group-hover:text-navy transition-colors">
-                  <Icon name="Send" size={20} />
-                </div>
-                <span className="text-navy font-medium group-hover:text-gold transition-colors">Telegram</span>
-              </a>
-              <a href="https://max.ru/+79125908964" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-                <div className="w-11 h-11 flex items-center justify-center bg-navy text-gold shrink-0 group-hover:bg-gold group-hover:text-navy transition-colors">
-                  <Icon name="MessageCircle" size={20} />
-                </div>
-                <span className="text-navy font-medium group-hover:text-gold transition-colors">MAX</span>
-              </a>
-            </div>
-          </div>
-          <form onSubmit={submit} className="bg-card border border-border p-8 lg:p-10 shadow-sm">
-            <h3 className="font-display text-2xl text-navy mb-6">Запись на консультацию</h3>
-            <div className="space-y-4">
-              <Input
-                placeholder="Ваше имя"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="rounded-none h-12"
-              />
-              <Input
-                placeholder="Телефон"
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="rounded-none h-12"
-              />
-              <Textarea
-                placeholder="Опишите вашу ситуацию (необязательно)"
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="rounded-none min-h-28"
-              />
-              <Button type="submit" disabled={loading} size="lg" className="w-full bg-gold text-navy hover:bg-gold/90 rounded-none text-base">
-                {loading ? 'Отправка...' : 'Получить консультацию'}
-              </Button>
-              <p className="text-xs text-muted-foreground text-center">
-                Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+      <section id="consult" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-block bg-orange-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Консультация</div>
+              <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-5 leading-tight">
+                Оставьте заявку —<br />разберём вашу ситуацию
+              </h2>
+              <div className="gold-line mb-7" />
+              <p className="text-gray-500 text-lg mb-8 leading-relaxed">
+                Консультация бесплатная. Оценю перспективы вашего дела, отвечу на вопросы и рассчитаю стоимость индивидуально.
               </p>
+              <div className="space-y-3">
+                <a href="tel:+79125908964" className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-orange-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
+                    <Icon name="Phone" size={20} />
+                  </div>
+                  <span className="text-foreground font-semibold group-hover:text-brand transition-colors">+7 912 590-89-64</span>
+                </a>
+                <a href="mailto:maria.mitroff@yandex.ru" className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-orange-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
+                    <Icon name="Mail" size={20} />
+                  </div>
+                  <span className="text-foreground font-semibold group-hover:text-brand transition-colors">maria.mitroff@yandex.ru</span>
+                </a>
+                <a href="https://t.me/+79125908964" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-orange-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
+                    <Icon name="Send" size={20} />
+                  </div>
+                  <span className="text-foreground font-semibold group-hover:text-brand transition-colors">Telegram</span>
+                </a>
+                <a href="https://max.ru/+79125908964" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-orange-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
+                    <Icon name="MessageCircle" size={20} />
+                  </div>
+                  <span className="text-foreground font-semibold group-hover:text-brand transition-colors">MAX</span>
+                </a>
+              </div>
             </div>
-          </form>
-        </div>
+            <form onSubmit={submit} className="bg-gray-50 rounded-2xl border border-gray-100 p-8 lg:p-10 shadow-sm">
+              <h3 className="font-display text-2xl text-foreground mb-6">Запись на консультацию</h3>
+              <div className="space-y-4">
+                <Input
+                  placeholder="Ваше имя"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  className="rounded-xl h-12 bg-white border-gray-200"
+                />
+                <Input
+                  placeholder="Телефон"
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  className="rounded-xl h-12 bg-white border-gray-200"
+                />
+                <Textarea
+                  placeholder="Опишите вашу ситуацию (необязательно)"
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  className="rounded-xl min-h-28 bg-white border-gray-200"
+                />
+                <Button type="submit" disabled={loading} size="lg" className="w-full rounded-xl text-base font-semibold text-white shadow-md" style={{ backgroundColor: 'hsl(var(--brand))' }}>
+                  {loading ? 'Отправка...' : 'Получить консультацию'}
+                </Button>
+                <p className="text-xs text-gray-400 text-center">
+                  Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
 
-      {/* CONTACTS / FOOTER */}
-      <footer id="contacts" className="bg-navy-deep text-white pt-16 pb-8">
+      {/* FOOTER */}
+      <footer id="contacts" className="bg-gray-900 text-white pt-14 pb-8">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-10 pb-12 border-b border-white/10">
+          <div className="grid md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
             <div>
-              <div className="font-display text-2xl mb-2">Митрофанова Мария Александровна</div>
-              <p className="text-white/50 text-sm">Специалист по банкротству физических лиц. Опыт работы 8 лет.</p>
+              <div className="font-display text-xl font-semibold mb-2">Митрофанова М.А.</div>
+              <p className="text-white/50 text-sm leading-relaxed">Специалист по банкротству физических лиц. Опыт работы 8 лет.</p>
             </div>
             <div>
-              <p className="uppercase tracking-widest text-gold text-xs mb-4">Контакты</p>
-              <a href="tel:+79125908964" className="block text-white/80 hover:text-gold mb-2">+7 912 590-89-64</a>
-              <a href="mailto:maria.mitroff@yandex.ru" className="block text-white/80 hover:text-gold mb-3">maria.mitroff@yandex.ru</a>
-              <div className="flex gap-3 mt-2">
-                <a href="https://t.me/+79125908964" target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center border border-white/20 text-white/60 hover:border-gold hover:text-gold transition-colors" title="Telegram">
-                  <Icon name="Send" size={16} />
+              <p className="text-xs uppercase tracking-widest text-brand font-semibold mb-4">Контакты</p>
+              <a href="tel:+79125908964" className="block text-white/70 hover:text-white mb-2 text-sm">+7 912 590-89-64</a>
+              <a href="mailto:maria.mitroff@yandex.ru" className="block text-white/70 hover:text-white mb-4 text-sm">maria.mitroff@yandex.ru</a>
+              <div className="flex gap-2">
+                <a href="https://t.me/+79125908964" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg flex items-center justify-center bg-white/10 text-white/60 hover:bg-brand hover:text-white transition-colors" title="Telegram">
+                  <Icon name="Send" size={15} />
                 </a>
-                <a href="https://max.ru/+79125908964" target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center border border-white/20 text-white/60 hover:border-gold hover:text-gold transition-colors" title="MAX">
-                  <Icon name="MessageCircle" size={16} />
+                <a href="https://max.ru/+79125908964" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg flex items-center justify-center bg-white/10 text-white/60 hover:bg-brand hover:text-white transition-colors" title="MAX">
+                  <Icon name="MessageCircle" size={15} />
                 </a>
               </div>
             </div>
             <div>
-              <p className="uppercase tracking-widest text-gold text-xs mb-4">Разделы</p>
+              <p className="text-xs uppercase tracking-widest text-brand font-semibold mb-4">Разделы</p>
               {NAV.map((n) => (
-                <button key={n.id} onClick={() => scrollTo(n.id)} className="block text-white/80 hover:text-gold mb-2 text-left">
+                <button key={n.id} onClick={() => scrollTo(n.id)} className="block text-white/60 hover:text-white mb-2 text-left text-sm">
                   {n.label}
                 </button>
               ))}
             </div>
           </div>
-          <p className="text-center text-white/40 text-sm mt-8">© {new Date().getFullYear()} Митрофанова М.А. Все права защищены.</p>
+          <p className="text-center text-white/30 text-xs mt-8">© {new Date().getFullYear()} Митрофанова М.А. Все права защищены.</p>
         </div>
       </footer>
     </div>

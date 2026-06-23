@@ -4,39 +4,40 @@
 
 @layer base {
   :root {
-    --background: 40 30% 98%;
-    --foreground: 218 45% 12%;
+    --background: 0 0% 100%;
+    --foreground: 220 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 218 45% 12%;
+    --card-foreground: 220 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 218 45% 12%;
+    --popover-foreground: 220 25% 15%;
 
-    --primary: 218 52% 16%;
-    --primary-foreground: 40 30% 98%;
+    --primary: 11 90% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 25% 94%;
-    --secondary-foreground: 218 52% 16%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 25% 15%;
 
-    --muted: 40 20% 93%;
-    --muted-foreground: 218 15% 42%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 48%;
 
-    --accent: 40 55% 52%;
-    --accent-foreground: 218 52% 16%;
+    --accent: 11 90% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 40 55% 52%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 11 90% 55%;
 
-    --gold: 40 55% 52%;
-    --navy: 218 52% 16%;
-    --navy-deep: 218 55% 10%;
+    --brand: 11 90% 55%;
+    --brand-dark: 11 90% 45%;
+    --dark: 220 25% 15%;
+    --dark-soft: 220 20% 25%;
 
-    --radius: 0.25rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -114,28 +115,38 @@
 
 @layer utilities {
   .text-gold {
-    color: hsl(var(--gold));
+    color: hsl(var(--brand));
   }
   .bg-gold {
-    background-color: hsl(var(--gold));
+    background-color: hsl(var(--brand));
   }
   .border-gold {
-    border-color: hsl(var(--gold));
+    border-color: hsl(var(--brand));
   }
   .bg-navy {
-    background-color: hsl(var(--navy));
+    background-color: hsl(var(--dark));
   }
   .bg-navy-deep {
-    background-color: hsl(var(--navy-deep));
+    background-color: hsl(var(--dark));
   }
   .text-navy {
-    color: hsl(var(--navy));
+    color: hsl(var(--dark));
+  }
+  .text-brand {
+    color: hsl(var(--brand));
+  }
+  .bg-brand {
+    background-color: hsl(var(--brand));
+  }
+  .bg-brand-light {
+    background-color: hsl(11 90% 97%);
   }
 
   .gold-line {
-    width: 64px;
-    height: 2px;
-    background: linear-gradient(90deg, hsl(var(--gold)), transparent);
+    width: 48px;
+    height: 4px;
+    background: hsl(var(--brand));
+    border-radius: 2px;
   }
 
   @keyframes fade-up {
