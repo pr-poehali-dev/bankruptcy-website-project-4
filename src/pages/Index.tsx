@@ -280,14 +280,30 @@ const Index = () => {
               Консультация бесплатная. Я оценю перспективы вашего дела, отвечу на вопросы и рассчитаю стоимость процедуры индивидуально.
             </p>
             <div className="space-y-4">
-              {[['Phone', '+7 912 590-89-64'], ['Mail', 'maria.mitroff@yandex.ru']].map(([icon, val]) => (
-                <div key={val} className="flex items-center gap-4">
-                  <div className="w-11 h-11 flex items-center justify-center bg-navy text-gold shrink-0">
-                    <Icon name={icon} size={20} />
-                  </div>
-                  <span className="text-navy font-medium">{val}</span>
+              <a href="tel:+79125908964" className="flex items-center gap-4 group">
+                <div className="w-11 h-11 flex items-center justify-center bg-navy text-gold shrink-0 group-hover:bg-gold group-hover:text-navy transition-colors">
+                  <Icon name="Phone" size={20} />
                 </div>
-              ))}
+                <span className="text-navy font-medium group-hover:text-gold transition-colors">+7 912 590-89-64</span>
+              </a>
+              <a href="mailto:maria.mitroff@yandex.ru" className="flex items-center gap-4 group">
+                <div className="w-11 h-11 flex items-center justify-center bg-navy text-gold shrink-0 group-hover:bg-gold group-hover:text-navy transition-colors">
+                  <Icon name="Mail" size={20} />
+                </div>
+                <span className="text-navy font-medium group-hover:text-gold transition-colors">maria.mitroff@yandex.ru</span>
+              </a>
+              <a href="https://t.me/+79125908964" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                <div className="w-11 h-11 flex items-center justify-center bg-navy text-gold shrink-0 group-hover:bg-gold group-hover:text-navy transition-colors">
+                  <Icon name="Send" size={20} />
+                </div>
+                <span className="text-navy font-medium group-hover:text-gold transition-colors">Telegram</span>
+              </a>
+              <a href="https://max.ru/+79125908964" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                <div className="w-11 h-11 flex items-center justify-center bg-navy text-gold shrink-0 group-hover:bg-gold group-hover:text-navy transition-colors">
+                  <Icon name="MessageCircle" size={20} />
+                </div>
+                <span className="text-navy font-medium group-hover:text-gold transition-colors">MAX</span>
+              </a>
             </div>
           </div>
           <form onSubmit={submit} className="bg-card border border-border p-8 lg:p-10 shadow-sm">
@@ -334,8 +350,15 @@ const Index = () => {
             <div>
               <p className="uppercase tracking-widest text-gold text-xs mb-4">Контакты</p>
               <a href="tel:+79125908964" className="block text-white/80 hover:text-gold mb-2">+7 912 590-89-64</a>
-              <a href="mailto:maria.mitroff@yandex.ru" className="block text-white/80 hover:text-gold">maria.mitroff@yandex.ru</a>
-              <p className="text-white/50 text-sm mt-2"></p>
+              <a href="mailto:maria.mitroff@yandex.ru" className="block text-white/80 hover:text-gold mb-3">maria.mitroff@yandex.ru</a>
+              <div className="flex gap-3 mt-2">
+                <a href="https://t.me/+79125908964" target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center border border-white/20 text-white/60 hover:border-gold hover:text-gold transition-colors" title="Telegram">
+                  <Icon name="Send" size={16} />
+                </a>
+                <a href="https://max.ru/+79125908964" target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center border border-white/20 text-white/60 hover:border-gold hover:text-gold transition-colors" title="MAX">
+                  <Icon name="MessageCircle" size={16} />
+                </a>
+              </div>
             </div>
             <div>
               <p className="uppercase tracking-widest text-gold text-xs mb-4">Разделы</p>
