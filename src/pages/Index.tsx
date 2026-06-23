@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const LEAD_URL = 'https://functions.poehali.dev/0a9c7dee-237b-4a40-88c2-ac3449af0ac4';
 const PORTRAIT = 'https://cdn.poehali.dev/projects/3dd36d97-b480-4702-892f-9d66ac6d871e/files/bc0a401c-afb9-42a2-b4d8-46d8679e7757.jpg';
@@ -13,7 +14,17 @@ const NAV = [
   { id: 'services', label: 'Услуги' },
   { id: 'cases', label: 'Кейсы' },
   { id: 'guarantees', label: 'Гарантии' },
+  { id: 'faq', label: 'Вопросы' },
   { id: 'contacts', label: 'Контакты' },
+];
+
+const FAQ = [
+  { q: 'Сколько стоит процедура банкротства?', a: 'Стоимость зависит от сложности вашей ситуации, поэтому рассчитывается индивидуально на бесплатной консультации. Без скрытых платежей — вы заранее знаете точную сумму.' },
+  { q: 'Правда ли консультация бесплатная?', a: 'Да, первичная консультация полностью бесплатна. Я разберу вашу ситуацию, оценю перспективы дела и отвечу на все вопросы — без каких-либо обязательств с вашей стороны.' },
+  { q: 'Можно ли сохранить ипотечную квартиру?', a: 'Во многих случаях — да. Я подбираю индивидуальную стратегию, чтобы сохранить ипотечное жильё даже в процессе банкротства. Конкретные варианты обсудим на консультации.' },
+  { q: 'Сколько времени занимает процедура?', a: 'Благодаря быстрой подаче заявлений и оперативному сбору документов процедура проходит в сжатые сроки. Точный срок зависит от вашей ситуации — в среднем от 6 до 9 месяцев.' },
+  { q: 'Перестанут ли звонить коллекторы?', a: 'Да. С момента подачи заявления о банкротстве прекращаются звонки коллекторов, начисление пеней и любые взыскания по вашим долгам.' },
+  { q: 'Какие документы нужны для начала?', a: 'На бесплатной консультации я составлю полный список под вашу ситуацию. Основную бумажную работу и сбор документов я беру на себя — вам не придётся ходить по инстанциям.' },
 ];
 
 const SERVICES = [
@@ -222,8 +233,41 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="py-24 container mx-auto px-6">
+        <div className="grid lg:grid-cols-3 gap-16 items-start">
+          <div className="lg:sticky lg:top-24">
+            <p className="uppercase tracking-[0.3em] text-gold text-xs mb-4">Вопросы и ответы</p>
+            <h2 className="font-display text-4xl lg:text-5xl text-navy mb-6 leading-tight">
+              Частые<br />вопросы
+            </h2>
+            <div className="gold-line mb-8" />
+            <p className="text-muted-foreground">
+              Не нашли ответ на свой вопрос? Задайте его лично на бесплатной консультации.
+            </p>
+            <Button onClick={() => scrollTo('consult')} className="mt-6 bg-navy text-white hover:bg-navy/90 rounded-none">
+              Задать вопрос
+            </Button>
+          </div>
+          <div className="lg:col-span-2">
+            <Accordion type="single" collapsible className="w-full">
+              {FAQ.map((item, i) => (
+                <AccordionItem key={i} value={`item-${i}`} className="border-border">
+                  <AccordionTrigger className="font-display text-xl text-navy text-left hover:no-underline hover:text-gold py-6">
+                    {item.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
+                    {item.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       {/* CONSULT FORM */}
-      <section id="consult" className="py-24 container mx-auto px-6">
+      <section id="consult" className="py-24 bg-secondary"><div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="uppercase tracking-[0.3em] text-gold text-xs mb-4">Консультация</p>
@@ -274,6 +318,7 @@ const Index = () => {
               </p>
             </div>
           </form>
+        </div>
         </div>
       </section>
 
