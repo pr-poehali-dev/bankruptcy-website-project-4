@@ -126,11 +126,11 @@ const Index = () => {
       </header>
 
       {/* HERO */}
-      <section id="hero" className="pt-16 bg-gradient-to-br from-orange-50 via-white to-white overflow-hidden">
+      <section id="hero" className="pt-16 bg-gradient-to-br from-blue-50 via-white to-white overflow-hidden">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center py-16 lg:py-24">
           <div className="animate-fade-up order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 bg-orange-100 text-brand rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
-              <span className="w-2 h-2 rounded-full bg-brand animate-pulse" style={{ backgroundColor: 'hsl(var(--brand))' }} />
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-brand rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: 'hsl(var(--brand))' }} />
               Опыт 8 лет · Бесплатная консультация
             </div>
             <h1 className="font-display text-5xl lg:text-6xl leading-[1.08] mb-5 text-foreground">
@@ -158,14 +158,14 @@ const Index = () => {
             </div>
           </div>
           <div className="relative order-1 lg:order-2 animate-fade-up" style={{ animationDelay: '0.15s' }}>
-            <div className="absolute inset-0 rounded-3xl" style={{ background: 'linear-gradient(135deg, hsl(11 90% 55% / 0.12), transparent 60%)' }} />
+            <div className="absolute inset-0 rounded-3xl" style={{ background: 'linear-gradient(135deg, hsl(217 85% 38% / 0.12), transparent 60%)' }} />
             <img
               src={PORTRAIT}
               alt="Митрофанова Мария Александровна"
               className="relative w-full h-[480px] lg:h-[560px] object-cover object-top rounded-3xl shadow-2xl"
             />
             <div className="absolute bottom-5 left-5 right-5 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0" style={{ backgroundColor: 'hsl(11 90% 97%)' }}>⚖️</div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0 bg-blue-50">⚖️</div>
               <div>
                 <div className="font-semibold text-foreground text-sm">Митрофанова Мария Александровна</div>
                 <div className="text-xs text-gray-400">Специалист по банкротству физических лиц</div>
@@ -179,7 +179,7 @@ const Index = () => {
       <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-block bg-orange-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Обо мне</div>
+            <div className="inline-block bg-blue-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Обо мне</div>
             <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
               Меня зовут Мария.<br />Я на вашей стороне
             </h2>
@@ -197,7 +197,7 @@ const Index = () => {
       <section id="services" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="inline-block bg-orange-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Услуги</div>
+            <div className="inline-block bg-blue-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Услуги</div>
             <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-2">Как я могу помочь</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -218,17 +218,17 @@ const Index = () => {
       <section id="cases" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="inline-block bg-orange-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Кейсы</div>
+            <div className="inline-block bg-blue-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Кейсы</div>
             <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-2">Реальные результаты</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-5">
             {CASES.map((c) => (
               <div key={c.sum} className="bg-gray-50 rounded-2xl p-7 hover-lift border border-gray-100 flex gap-5 items-start">
-                <div className="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center text-2xl shrink-0">
+                <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-2xl shrink-0">
                   {c.emoji}
                 </div>
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-brand bg-orange-50 px-2 py-0.5 rounded-full">{c.tag}</span>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-brand bg-blue-50 px-2 py-0.5 rounded-full">{c.tag}</span>
                   <div className="font-display text-2xl font-bold text-foreground mt-2 mb-1">Списано {c.sum}</div>
                   <p className="text-gray-400 text-sm leading-relaxed">{c.desc}</p>
                 </div>
@@ -262,7 +262,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-16 items-start">
             <div className="lg:sticky lg:top-24">
-              <div className="inline-block bg-orange-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">FAQ</div>
+              <div className="inline-block bg-blue-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">FAQ</div>
               <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-4 leading-tight">Частые вопросы</h2>
               <div className="gold-line mb-6" />
               <p className="text-gray-400 mb-6">Не нашли ответ на свой вопрос? Задайте его на бесплатной консультации.</p>
@@ -293,7 +293,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-block bg-orange-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Консультация</div>
+              <div className="inline-block bg-blue-50 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">Консультация</div>
               <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-5 leading-tight">
                 Оставьте заявку —<br />разберём вашу ситуацию
               </h2>
@@ -303,25 +303,25 @@ const Index = () => {
               </p>
               <div className="space-y-3">
                 <a href="tel:+79125908964" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-orange-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-blue-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
                     <Icon name="Phone" size={20} />
                   </div>
                   <span className="text-foreground font-semibold group-hover:text-brand transition-colors">+7 912 590-89-64</span>
                 </a>
                 <a href="mailto:maria.mitroff@yandex.ru" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-orange-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-blue-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
                     <Icon name="Mail" size={20} />
                   </div>
                   <span className="text-foreground font-semibold group-hover:text-brand transition-colors">maria.mitroff@yandex.ru</span>
                 </a>
                 <a href="https://t.me/+79125908964" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-orange-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-blue-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
                     <Icon name="Send" size={20} />
                   </div>
                   <span className="text-foreground font-semibold group-hover:text-brand transition-colors">Telegram</span>
                 </a>
                 <a href="https://max.ru/+79125908964" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-orange-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-blue-50 text-brand group-hover:bg-brand group-hover:text-white transition-colors shrink-0">
                     <Icon name="MessageCircle" size={20} />
                   </div>
                   <span className="text-foreground font-semibold group-hover:text-brand transition-colors">MAX</span>

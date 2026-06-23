@@ -13,29 +13,30 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 25% 15%;
 
-    --primary: 11 90% 55%;
+    --primary: 217 85% 38%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 25% 15%;
+    --secondary: 214 40% 96%;
+    --secondary-foreground: 220 45% 12%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 48%;
+    --muted: 214 30% 96%;
+    --muted-foreground: 217 15% 48%;
 
-    --accent: 11 90% 55%;
+    --accent: 217 85% 38%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 11 90% 55%;
+    --border: 214 25% 90%;
+    --input: 214 25% 90%;
+    --ring: 217 85% 38%;
 
-    --brand: 11 90% 55%;
-    --brand-dark: 11 90% 45%;
-    --dark: 220 25% 15%;
-    --dark-soft: 220 20% 25%;
+    --brand: 217 85% 38%;
+    --brand-dark: 217 85% 28%;
+    --brand-light: 214 80% 95%;
+    --dark: 220 45% 12%;
+    --dark-soft: 220 35% 22%;
 
     --radius: 0.75rem;
 
@@ -139,7 +140,7 @@
     background-color: hsl(var(--brand));
   }
   .bg-brand-light {
-    background-color: hsl(11 90% 97%);
+    background-color: hsl(var(--brand-light));
   }
 
   .gold-line {
